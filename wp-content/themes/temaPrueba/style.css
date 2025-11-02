@@ -326,6 +326,7 @@ p .post-content {
 	margin: 0 auto;
 	max-width: 100%;
 	width: 70em;
+	padding-bottom: 2em;
 }
 
 @media screen and (max-width: 1680px) {
@@ -1716,6 +1717,9 @@ footer {
 	flex-direction: column;
 	align-items: center;
 }
+.box h2{
+	color: #2C76E0;
+}
 
 .box .image.featured {
 	position: relative;
@@ -1755,13 +1759,13 @@ footer {
 
 .box-index {
 	background: #fafcfa;
-	padding: 2.75em 1.75em 2.75em 1.75em;
 	padding: 25px 25px 25px 30px;
 	border-radius: 1em;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	border: solid 1px #c67cff;
+	
 }
 
 .box-index .image.featured {
@@ -2125,6 +2129,7 @@ ul.divided li {
 
 ul.divided li:first-child {
 	padding-top: 0;
+	padding-bottom :1em;
 }
 .wp-block-categories,
 .wp-block-latest-posts.wp-block-latest-posts__list {
@@ -3222,7 +3227,8 @@ header {
 	iframe {
 		max-width: 330px;
 	}
-	img.wp-post-img {
+	.attachment-category-square {
 		max-width: 100%;
+		object-fit:contain;
 	}
 }

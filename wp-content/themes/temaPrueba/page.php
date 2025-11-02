@@ -20,7 +20,6 @@
                     }
                     ?>   
                </article>
-                <a href="#" class="image featured">
                   </a>
                     <?php
                 endwhile;
