@@ -1750,7 +1750,7 @@ footer {
 	font-size: 1.25em;
 }
 .box p {
-	margin: 0 1em;
+	margin: 0;
 }
 
 .box footer ul.actions {
@@ -2139,6 +2139,7 @@ ul.divided li:first-child {
 
 .wp-block-heading {
 	font-family: 'Sansita Swashed', sans-serif;
+	margin-bottom: 1em;
 }
 /* Social */
 
@@ -3099,6 +3100,9 @@ header {
 	.box.post header > p {
 		margin-top: 0;
 		font-size: 1em;
+	}
+	.box.post p{
+		width: 95%;
 	}
 
 	/* Divided */
