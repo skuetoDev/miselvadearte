@@ -64,11 +64,11 @@
             <!-- Copyright -->
             <div id="copyright">
                <ul class="links">
-                  <li>Developed by  <a href='https://www.linkedin.com/in/skuetoDev/'>
+                  <li>Developed by  <a href='https://www.linkedin.com/in/skuetoDev/' target="_blank">
                      SkuetoDev.</a> 
                   </li>
                   <li></a>&copy;2025 
-                     <a href='https://www.instagram.com/scrap.lion/'>
+                     <a href='https://www.instagram.com/scrap.lion/' target="_blank">
                      Scraplion
                      </a>.All rights reserved.</li>
                </ul>
