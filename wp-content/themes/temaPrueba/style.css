@@ -1984,6 +1984,9 @@ cite a,
 	text-decoration: none; /* Quita el subrayado */
 	cursor: default;
 }
+.cat-item {
+	list-style:none;
+}
 
 /* Actions */
 
@@ -2129,12 +2132,14 @@ ul.divided li {
 
 ul.divided li:first-child {
 	padding-top: 0;
-	padding-bottom :1em;
+
 }
 .wp-block-categories,
 .wp-block-latest-posts.wp-block-latest-posts__list {
 	font-family: 'Raleway', sans-serif;
 	text-underline-offset: 4px;
+	padding-left: 0;
+
 }
 
 .wp-block-heading {
@@ -3229,7 +3234,7 @@ header {
 
 @media screen and (max-width: 570px) {
 	iframe {
-		max-width: 330px;
+		max-width: 320px;
 	}
 	.attachment-category-square {
 		max-width: 100%;

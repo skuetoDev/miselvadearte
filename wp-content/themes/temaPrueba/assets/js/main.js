@@ -60,5 +60,6 @@
 					target: $body,
 					visibleClass: 'navPanel-visible'
 				});
+	
 
 })(jQuery);
