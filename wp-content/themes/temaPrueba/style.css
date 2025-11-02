@@ -3222,4 +3222,7 @@ header {
 	iframe {
 		max-width: 330px;
 	}
+	img.wp-post-img {
+		max-width: 100%;
+	}
 }
