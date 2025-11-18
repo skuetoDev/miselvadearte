@@ -104,3 +104,10 @@ function custom_excerpt_length($length)
     return 25; // número de palabras que quieres mostrar
 }
 add_filter('excerpt_length', 'custom_excerpt_length');
+
+add_action('init', function () {
+    $rules = get_option('rewrite_rules');
+    if (empty($rules)) {
+        flush_rewrite_rules();
+    }
+});
