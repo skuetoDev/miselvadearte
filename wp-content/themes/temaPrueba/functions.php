@@ -106,8 +106,10 @@ function custom_excerpt_length($length)
 add_filter('excerpt_length', 'custom_excerpt_length');
 
 add_action('init', function () {
-    $rules = get_option('rewrite_rules');
-    if (empty($rules)) {
+    $current = get_option('permalink_structure');
+    $desired = '/%postname%/'; // o la que uses
+    if ($current !== $desired) {
+        update_option('permalink_structure', $desired);
         flush_rewrite_rules();
     }
 });
