@@ -104,12 +104,3 @@ function custom_excerpt_length($length)
     return 25; // número de palabras que quieres mostrar
 }
 add_filter('excerpt_length', 'custom_excerpt_length');
-
-add_action('init', function () {
-    $current = get_option('permalink_structure');
-    $desired = '/%postname%/'; // o la que uses
-    if ($current !== $desired) {
-        update_option('permalink_structure', $desired);
-        flush_rewrite_rules();
-    }
-});
