@@ -22,9 +22,9 @@ if (! defined('ABSPATH')) {
         
         <?php if ($thumbnail) : ?>
             <div class="descarga-imagen">
-                <a href="<?php $download->the_download_link(); ?>" rel="nofollow">
-                    <?php echo $thumbnail; ?>
-                </a>
+                <a href="<?php echo esc_url($download->get_download_link(array( 'ajax' => false))); ?>" rel="nofollow">
+            <?php echo $thumbnail; ?>
+</a>
             </div>
         <?php endif; ?>
         
