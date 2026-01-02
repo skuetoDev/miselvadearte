@@ -28,15 +28,5 @@ if (! defined('ABSPATH')) {
             </div>
         <?php endif; ?>
         
-        <div>
-            <p>
-                Haz clic en la imagen para descargarla <br>
-                <span class="titulo-descarga"><?php $download->the_title(); ?></span>.
-                <span class="formato-descarga"><?php echo esc_html($download->get_version()->get_filetype()); ?></span>
-                <span class="tamano-descarga"><?php echo esc_html($download->get_version()->get_filesize_formatted());
-                ?></span>
-            </p>                            
-        </div>
-        
     <?php endif; ?>
 </div>
