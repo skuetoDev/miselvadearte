@@ -104,6 +104,3 @@ function custom_excerpt_length($length)
     return 25; // número de palabras que quieres mostrar
 }
 add_filter('excerpt_length', 'custom_excerpt_length');
-
-// Ocultar el progreso de descarga en Download Monitor
-add_filter('dlm_download_link_show_progress', '__return_false');
