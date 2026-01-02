@@ -28,13 +28,14 @@ if (! defined('ABSPATH')) {
             </div>
         <?php endif; ?>
         
-        <div class="descarga-info">
-            <a class="boton-descarga" href="<?php $download->the_download_link(); ?>" rel="nofollow">
-                <span class="titulo-descarga"><?php $download->the_title(); ?></span>
+        <div>
+            <p>
+                Haz clic en la imagen para descargarla <br>
+                <span class="titulo-descarga"><?php $download->the_title(); ?></span>.
                 <span class="formato-descarga"><?php echo esc_html($download->get_version()->get_filetype()); ?></span>
                 <span class="tamano-descarga"><?php echo esc_html($download->get_version()->get_filesize_formatted());
                 ?></span>
-            </a>
+            </p>                            
         </div>
         
     <?php endif; ?>
