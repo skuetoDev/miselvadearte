@@ -1,0 +1,22 @@
+# Comentarios (líneas que comienzan con #)
+# Ignorar archivos por extensión
+*.log
+*.tmp
+
+# Ignorar archivos específicos
+secret.txt
+config.php
+
+
+# Ignorar carpetas completas
+node_modules/
+dist/
+build/
+
+# Ignorar archivos en cualquier subcarpeta
+**/debug.log
+
+# Excepciones (¡NO ignorar!)
+!important.txt
+
+
