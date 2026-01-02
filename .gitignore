@@ -1,28 +1,36 @@
-# Comentarios (líneas que comienzan con #)
-# Ignorar archivos por extensión
+# WordPress Core
+/wp-admin/
+/wp-includes/
+/wp-*.php
+license.txt
+readme.html
+xmlrpc.php
+
+# Plugins
+/wp-content/plugins/*
+!/wp-content/plugins/miplugin-personalizado/
+
+# Themes
+/wp-content/themes/*
+!/wp-content/themes/temaPrueba/
+
+# Uploads y cache
+/wp-content/uploads/
+/wp-content/cache/
 *.log
 *.tmp
+*.zip
 
-# Ignorar archivos específicos
-secret.txt
-config.php
+# Configuración local
+wp-config.php
+.htaccess
+*.sql
 
-
-# Ignorar carpetas completas
+# Node y build
 node_modules/
 dist/
 build/
 
-# Ignorar archivos en cualquier subcarpeta
-**/debug.log
-
-# Excepciones (¡NO ignorar!)
-!important.txt
-
-/wp-admin/
-/wp-includes/
-index.php
-license.txt
-readme.html
-wp-*.php
-xmlrpc.php
+# Evitar archivos ocultos de OS
+.DS_Store
+Thumbs.db
