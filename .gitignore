@@ -19,18 +19,21 @@ xmlrpc.php
 /wp-content/cache/
 *.log
 *.tmp
-*.zip
 
-# Configuración local
-wp-config.php
-.htaccess
-*.sql
+# Ignorar archivos específicos
+secret.txt
+config.php
 
-# Node y build
+
+# Ignorar carpetas completas
 node_modules/
 dist/
 build/
 
-# Evitar archivos ocultos de OS
-.DS_Store
-Thumbs.db
+# Ignorar archivos en cualquier subcarpeta
+**/debug.log
+
+# Excepciones (¡NO ignorar!)
+!important.txt
+
+
