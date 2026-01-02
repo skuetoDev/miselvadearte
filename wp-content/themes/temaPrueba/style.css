@@ -2731,15 +2731,8 @@ header {
     transform: scale(1.05);
 }
 
-.descarga-info {
-    margin-top: 15px;
-}
-
-.formato-descarga,
-.tamano-descarga {
-    display: block;
-    font-size: 12px;
-    opacity: 0.8;
+.dlm-download-link .dlm-download-progress {
+    display: none !important;
 }
 
 
