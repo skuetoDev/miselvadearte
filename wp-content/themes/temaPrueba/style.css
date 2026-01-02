@@ -11,34 +11,38 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
 @font-face {
-	font-family: 'Raleway';
-	src: url('wp-content\themes\temaPrueba\assets\fonts\Raleway-Thin.woff') format('woff'),
-		url('wp-content\themes\temaPrueba\assets\fonts\Raleway-Thin.woff2') format('woff2');
-	font-weight: 400;
-	font-style: normal;
-	font-display: swap;
+  font-family: 'Raleway';
+  src: url('wp-content\themes\temaPrueba\assets\fonts\Raleway-Thin.woff') format('woff'),
+       url('wp-content\themes\temaPrueba\assets\fonts\Raleway-Thin.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 
-	font-family: 'Raleway';
-	src: url('wp-content\themes\temaPrueba\assets\fonts\Raleway-Bold.woff2') format('woff2'),
-		url('wp-content\themes\temaPrueba\assets\fonts\Raleway-Bold.woff') format('woff');
-	font-weight: 700;
-	font-style: normal;
-	font-display: swap;
+ 
+  font-family: 'Raleway';
+  src: url('wp-content\themes\temaPrueba\assets\fonts\Raleway-Bold.woff2') format('woff2'),
+       url('wp-content\themes\temaPrueba\assets\fonts\Raleway-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  
+   font-family: 'Sansita Swashed';
+  src: url('wp-content\themes\temaPrueba\assets\fonts\SansitaSwashed-Light.woff2') format('woff2'),
+       url('wp-content\themes\temaPrueba\assets\fonts\SansitaSwashed-Light.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 
-	font-family: 'Sansita Swashed';
-	src: url('wp-content\themes\temaPrueba\assets\fonts\SansitaSwashed-Light.woff2') format('woff2'),
-		url('wp-content\themes\temaPrueba\assets\fonts\SansitaSwashed-Light.woff') format('woff');
-	font-weight: 400;
-	font-style: normal;
-	font-display: swap;
-
-	font-family: 'Raleway';
-	src: url('wp-content\themes\temaPrueba\assets\fonts\SansitaSwashed-Light.woff2') format('woff2'),
-		url('wp-content\themes\temaPrueba\assets\fonts\SansitaSwashed-Light.woff') format('woff');
-	font-weight: 700;
-	font-style: normal;
-	font-display: swap;
+ 
+  font-family: 'Raleway';
+  src: url('wp-content\themes\temaPrueba\assets\fonts\SansitaSwashed-Light.woff2') format('woff2'),
+       url('wp-content\themes\temaPrueba\assets\fonts\SansitaSwashed-Light.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
 }
+
+
 
 /*
 	Dopetrope by HTML5 UP
@@ -1744,8 +1748,8 @@ footer {
 	flex-direction: column;
 	align-items: center;
 }
-.box h2 {
-	color: #2c76e0;
+.box h2{
+	color: #2C76E0;
 }
 
 .box .image.featured {
@@ -1792,6 +1796,7 @@ footer {
 	flex-direction: column;
 	align-items: center;
 	border: solid 1px #c67cff;
+	
 }
 
 .box-index .image.featured {
@@ -2011,7 +2016,7 @@ cite a,
 	cursor: default;
 }
 .cat-item {
-	list-style: none;
+	list-style:none;
 }
 
 /* Actions */
@@ -2158,12 +2163,14 @@ ul.divided li {
 
 ul.divided li:first-child {
 	padding-top: 0;
+
 }
 .wp-block-categories,
 .wp-block-latest-posts.wp-block-latest-posts__list {
 	font-family: 'Raleway', sans-serif;
 	text-underline-offset: 4px;
 	padding-left: 0;
+
 }
 
 .wp-block-heading {
@@ -2706,27 +2713,33 @@ header {
 }
 
 .descarga-personalizada {
-	text-align: center;
-	padding: 20px;
-	border: 1px solid #ddd;
-	border-radius: 8px;
-	margin: 20px 0;
-	position: relative;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 20px 0;
 }
 
 .descarga-imagen img {
-	max-width: 100%;
-	height: auto;
-	border-radius: 4px;
-	transition: transform 0.3s ease;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    transition: transform 0.3s ease;
 }
 
 .descarga-imagen a:hover img {
-	transform: scale(1.05);
+    transform: scale(1.05);
+}
+
+.descarga-info {
+    margin-top: 15px;
+}
+
+.formato-descarga,
+.tamano-descarga {
+    display: block;
+    font-size: 12px;
+    opacity: 0.8;
 }
 
 
@@ -3155,7 +3168,7 @@ header {
 		margin-top: 0;
 		font-size: 1em;
 	}
-	.box.post p {
+	.box.post p{
 		width: 95%;
 	}
 
@@ -3287,6 +3300,6 @@ header {
 	}
 	.attachment-category-square {
 		max-width: 100%;
-		object-fit: contain;
+		object-fit:contain;
 	}
 }
