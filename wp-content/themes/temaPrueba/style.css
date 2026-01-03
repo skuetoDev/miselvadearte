@@ -12,32 +12,28 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 @font-face {
 	font-family: 'Raleway';
-	src: url('wp-content\themes\temaPrueba\assets\fonts\Raleway-Thin.woff') format('woff'),
-		url('wp-content\themes\temaPrueba\assets\fonts\Raleway-Thin.woff2') format('woff2');
+	src: url('wp-content\themes\temaPrueba\assets\fonts\Raleway-Thin.woff2') format('woff2');
 	font-weight: 400;
 	font-style: normal;
 	font-display: block;
 }
 @font-face {
 	font-family: 'Raleway';
-	src: url('wp-content\themes\temaPrueba\assets\fonts\Raleway-Bold.woff2') format('woff2'),
-		url('wp-content\themes\temaPrueba\assets\fonts\Raleway-Bold.woff') format('woff');
+	src: url('wp-content\themes\temaPrueba\assets\fonts\Raleway-Bold.woff2') format('woff2');
 	font-weight: 700;
 	font-style: normal;
 	font-display: block;
 }
 @font-face {
 	font-family: 'Sansita Swashed';
-	src: url('wp-content\themes\temaPrueba\assets\fonts\SansitaSwashed-Light.woff2') format('woff2'),
-		url('wp-content\themes\temaPrueba\assets\fonts\SansitaSwashed-Light.woff') format('woff');
+	src: url('wp-content\themes\temaPrueba\assets\fonts\SansitaSwashed-Light.woff2') format('woff2');
 	font-weight: 400;
 	font-style: normal;
 	font-display: block;
 }
 @font-face {
 	font-family: 'Sansita Swashed';
-	src: url('wp-content\themes\temaPrueba\assets\fonts\SansitaSwashed-Light.woff2') format('woff2'),
-		url('wp-content\themes\temaPrueba\assets\fonts\SansitaSwashed-Light.woff') format('woff');
+	src: url('wp-content\themes\temaPrueba\assets\fonts\SansitaSwashed-Light.woff2') format('woff2');
 	font-weight: 700;
 	font-style: normal;
 	font-display: block;
