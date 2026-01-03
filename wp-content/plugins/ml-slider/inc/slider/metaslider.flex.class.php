@@ -40,7 +40,7 @@ class MetaFlexSlider extends MetaSlider
         add_filter('metaslider_flex_slider_parameters', array( $this, 'manage_dots_onhover' ), 10, 3);
         add_filter('metaslider_flex_slider_parameters', array( $this, 'loading_status' ), 10, 3);
         add_filter('metaslider_flex_slider_parameters', array( $this, 'lazy_load' ), 10, 3);
-        //add_filter('metaslider_flex_slider_parameters', array($this, 'fix_touch_swipe'), 10, 3);
+        add_filter('metaslider_flex_slider_parameters', array($this, 'fix_touch_swipe'), 10, 3);
 
         if(metaslider_pro_is_active() == false) {
             add_filter('metaslider_flex_slider_parameters', array( $this, 'metaslider_flex_loop'), 99, 3);
@@ -850,21 +850,60 @@ class MetaFlexSlider extends MetaSlider
      */
     public function manage_pausePlay_button($options, $slider_id, $settings)
     {
-        if (isset($settings['pausePlay']) && $settings['pausePlay'] === 'true' && $settings['autoPlay'] === 'false') {
-            $script = "$('.flex-pauseplay a').removeClass('flex-pause').addClass('flex-play');";
-        
-            if (isset($settings['showPlayText']) && $settings['showPlayText'] === 'true' && !empty($settings['playText'])) {
-                $script .= "$('.flex-pauseplay a').text('" . addslashes($settings['playText']) . "');";
-            }
-        
-            $options['start'] = isset($options['start']) ? $options['start'] : array();
-            $options['start'] = array_merge($options['start'], [$script]);
-        }
-        /* @since 3.97 - disable hover on pause when play button is enabled */
         if (isset($settings['pausePlay']) && $settings['pausePlay'] === 'true') {
+            /* @since 3.97 - disable hover on pause when play button is enabled */
             unset($options['pauseOnHover']);
+            
+            $showPlayText = isset($settings['showPlayText']) && $settings['showPlayText'] === 'true' 
+                ? true : false;
+            $playText = $showPlayText && isset($settings['playText']) && !empty($settings['playText'])
+                ? $settings['playText'] : esc_html__('Play', 'ml-slider');
+            $pauseText = $showPlayText && isset($settings['pauseText']) && !empty($settings['pauseText'])
+                ? $settings['pauseText'] : esc_html__('Pause', 'ml-slider');
+
+            $options['start'] = isset($options['start']) ? $options['start'] : array();
+
+            // Autoplay is enabled
+            if ($settings['autoPlay'] === 'false') {
+                $script = "$('.flex-pauseplay a').removeClass('flex-pause').addClass('flex-play');";
+        
+                if ($showPlayText && !empty($settings['playText'])) {
+                    $script .= "$('.flex-pauseplay a').text('" . addslashes($settings['playText']) . "');";
+                }
+            
+                $options['start'] = array_merge($options['start'], [$script]);
+            }
+
+            // aria-live management
+            $ariaLive    = isset( $settings['ariaLive'] ) && $settings['ariaLive'] == 'true' ? true : false;
+            $ariaLiveOn  = $ariaLive ? "$('#metaslider_" . $slider_id . " ul.slides').attr('aria-live', 'polite');" : "";
+            $ariaLiveOff = $ariaLive ? "$('#metaslider_" . $slider_id . " ul.slides').attr('aria-live', 'off');" : "";
+
+            // Add aria-label attribute
+            $options['start'] = array_merge($options['start'], array(
+                "var ms_pause_play_sync = function() {
+                    var pausePlayBtn = $('#metaslider_" . $slider_id . " .flex-pauseplay a');
+                    if (pausePlayBtn.hasClass('flex-pause')) {
+                        pausePlayBtn.attr('aria-label', '" . addslashes($pauseText) . "');
+                        {$ariaLiveOff}
+                    } else {
+                        pausePlayBtn.attr('aria-label', '" . addslashes($playText) . "');
+                        {$ariaLiveOn}
+                    }
+                };
+                ms_pause_play_sync();
+                
+                $('#metaslider_" . $slider_id . " .flex-pauseplay a').on('click', function() {
+                    setTimeout(function() {
+                        ms_pause_play_sync();
+                    }, 100);
+                });"
+            ));
         }
         
+        // We don't want this filter hanging around if there's more than one slideshow on the page
+        remove_filter('metaslider_flex_slider_parameters', array($this, 'manage_pausePlay_button'));
+
         return $options;
     }
 
@@ -985,16 +1024,19 @@ class MetaFlexSlider extends MetaSlider
      * 
      * @since 3.100
      */
-    public function fix_touch_swipe($options, $slider_id, $settings)
+    public function fix_touch_swipe( $options, $slider_id, $settings )
     {
-        if (isset($settings['touch']) && $settings['touch'] == 'true') {
+        $global_settings = metaslider_global_settings();
+        $fix_touch_swipe = isset($global_settings['fixTouchSwipe']) ? (bool) $global_settings['fixTouchSwipe'] : false;
+
+        if ( $fix_touch_swipe ) {
             $options['start'] = isset( $options['start'] ) ? $options['start'] : array();
             $options['start'] = array_merge( $options['start'], array(
                 "$('html, body').css('overflow-x', 'hidden');"
-            ));
+            ) );
         }
 
-        remove_filter('metaslider_flex_slider_parameters', array($this, 'fix_touch_swipe'));
+        remove_filter( 'metaslider_flex_slider_parameters', array( $this, 'fix_touch_swipe' ) );
         return $options;
     }
 
@@ -1020,7 +1062,7 @@ class MetaFlexSlider extends MetaSlider
                     
                     var slide_width = li_width + " . $this->get_setting( 'carouselMargin' ) . " + 'px';
                     $(':root').css('--ms-slide-width', slide_width);
-                }
+                };
                 ms_loop_carousel_continuously_adjust();
             "));
         }

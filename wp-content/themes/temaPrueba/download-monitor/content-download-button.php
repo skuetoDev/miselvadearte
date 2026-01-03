@@ -21,13 +21,21 @@ if (! defined('ABSPATH')) {
         ?>
         
         <?php if ($thumbnail) : ?>
-            <div class="descarga-imagen">
-                <a href="<?php $download->the_download_link(); ?>" rel="nofollow">
-            <?php echo $thumbnail; ?>
-</a>
-            <?php echo $thumbnail; ?>
-</a>
-            </div>
+            <div class="descarga-simple">
+            <?php if ($download->has_version()) :?>
+        <a href="<?php $download->the_download_link(); ?>" rel="nofollow" class="enlace-descarga-imagen"><?php
+            // Mostrar imagen destacada
+        if (has_post_thumbnail($download->get_id())) {
+                echo get_the_post_thumbnail($download->get_id(), 'large', array(
+                    'class' => 'imagen-para-descargar',
+                    'alt' => 'Descargar ' . $download->get_title()
+                ));
+        }
+        ?>
+        </a>
+        
+            <?php endif; ?>
+</div>
         <?php endif; ?>
         
     <?php endif; ?>
