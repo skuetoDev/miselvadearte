@@ -106,13 +106,14 @@ function custom_excerpt_length($length)
 add_filter('excerpt_length', 'custom_excerpt_length');
 
 // precargar fuentes
-function optimizar_carga_fuentes()
+function cargar_google_fonts()
 {
-    ?>
-    <link rel="preload" href="<?php echo get_template_directory_uri();
-    ?>/assets/fonts/Raleway-Thin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="<?php echo get_template_directory_uri();
-    ?>/assets/fonts/Raleway-Bold.woff2" as="font" type="font/woff2" crossorigin>
-    <?php
+    wp_enqueue_style(
+        'google-fonts',
+        'https://fonts.googleapis.com/css2?family=Raleway:wght@100;
+        // 700&family=Sansita+Swashed:wght@300;700&display=swap',
+        array(),
+        null
+    );
 }
-add_action('wp_head', 'optimizar_carga_fuentes', 1);
+add_action('wp_enqueue_scripts', 'cargar_google_fonts');
