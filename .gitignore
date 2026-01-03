@@ -9,26 +9,33 @@ xmlrpc.php
 
 # Configuración
 /wp-config.php
+/.htaccess
+/.htaccess.bk
 
-# Plugins - Ignorar todos
+# Plugins
 /wp-content/plugins/
 
-# Si necesitas versionar Download Monitor (descomenta):
-# !/wp-content/plugins/download-monitor/
+# Must-use plugins de hosting
+/wp-content/mu-plugins/
 
 # Themes
 /wp-content/themes/*
 !/wp-content/themes/temaPrueba/
 
-# Uploads, cache y TRADUCCIONES
+# Uploads, cache, traducciones y LiteSpeed
 /wp-content/uploads/
 /wp-content/cache/
 /wp-content/upgrade/
 /wp-content/languages/
+/wp-content/litespeed/
 
 # Base de datos
 *.sql
 *.sql.gz
+
+# Backups
+*.bk
+*.backup
 
 # Ignorar archivos específicos
 secret.txt
@@ -39,7 +46,7 @@ node_modules/
 dist/
 build/
 
-# Ignorar archivos en cualquier subcarpeta
+# Logs
 **/debug.log
 *.log
 *.tmp
