@@ -104,3 +104,15 @@ function custom_excerpt_length($length)
     return 25; // número de palabras que quieres mostrar
 }
 add_filter('excerpt_length', 'custom_excerpt_length');
+
+// precargar fuentes
+function precargar_fuentes_custom()
+{
+    ?>
+    <link rel="preload" href="<?php echo get_template_directory_uri();
+    ?>/assets/fonts/Raleway-Thin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="<?php echo get_template_directory_uri();
+    ?>/assets/fonts/Raleway-Bold.woff2" as="font" type="font/woff2" crossorigin>
+    <?php
+}
+add_action('wp_head', 'precargar_fuentes_custom', 1);

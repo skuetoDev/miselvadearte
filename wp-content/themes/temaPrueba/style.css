@@ -2795,7 +2795,7 @@ header {
 }
 
 .enlace-descarga-imagen:focus::before {
-    content: "✓ Imagen descargada";
+    content: "Imagen descargada";
     position: absolute;
     top: 50%;
     left: 50%;
