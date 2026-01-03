@@ -106,7 +106,7 @@ function custom_excerpt_length($length)
 add_filter('excerpt_length', 'custom_excerpt_length');
 
 // precargar fuentes
-function precargar_fuentes_custom()
+function optimizar_carga_fuentes()
 {
     ?>
     <link rel="preload" href="<?php echo get_template_directory_uri();
@@ -115,4 +115,4 @@ function precargar_fuentes_custom()
     ?>/assets/fonts/Raleway-Bold.woff2" as="font" type="font/woff2" crossorigin>
     <?php
 }
-add_action('wp_head', 'precargar_fuentes_custom', 1);
+add_action('wp_head', 'optimizar_carga_fuentes', 1);

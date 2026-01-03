@@ -16,7 +16,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 		url('wp-content\themes\temaPrueba\assets\fonts\Raleway-Thin.woff2') format('woff2');
 	font-weight: 400;
 	font-style: normal;
-	font-display: swap;
+	font-display: block;
 }
 @font-face {
 	font-family: 'Raleway';
@@ -24,7 +24,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 		url('wp-content\themes\temaPrueba\assets\fonts\Raleway-Bold.woff') format('woff');
 	font-weight: 700;
 	font-style: normal;
-	font-display: swap;
+	font-display: block;
 }
 @font-face {
 	font-family: 'Sansita Swashed';
@@ -32,7 +32,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 		url('wp-content\themes\temaPrueba\assets\fonts\SansitaSwashed-Light.woff') format('woff');
 	font-weight: 400;
 	font-style: normal;
-	font-display: swap;
+	font-display: block;
 }
 @font-face {
 	font-family: 'Sansita Swashed';
@@ -40,7 +40,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 		url('wp-content\themes\temaPrueba\assets\fonts\SansitaSwashed-Light.woff') format('woff');
 	font-weight: 700;
 	font-style: normal;
-	font-display: swap;
+	font-display: block;
 }
 
 /*
