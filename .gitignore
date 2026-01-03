@@ -1,36 +1,34 @@
-# WordPress Core - Ignorar TODO el core
+# WordPress Core
 /wp-admin/
 /wp-includes/
 /wp-*.php
 /index.php
-/license.txt
-/readme.html
-/xmlrpc.php
-/wp-config-sample.php
+license.txt
+readme.html
+xmlrpc.php
 
-# Ignorar TODOS los plugins (incluso los personalizados)
+# Configuración
+/wp-config.php
+
+# Plugins - Ignorar todos
 /wp-content/plugins/
 
-# Si necesitas versionar algún plugin personalizado, descoméntalo:
-# !/wp-content/plugins/miplugin-personalizado/
+# Si necesitas versionar Download Monitor (descomenta):
+# !/wp-content/plugins/download-monitor/
 
-# Themes - Ignorar todos excepto tu tema
+# Themes
 /wp-content/themes/*
 !/wp-content/themes/temaPrueba/
 
-# Uploads y cache
+# Uploads, cache y TRADUCCIONES
 /wp-content/uploads/
 /wp-content/cache/
 /wp-content/upgrade/
-*.log
-*.tmp
+/wp-content/languages/
 
 # Base de datos
 *.sql
 *.sql.gz
-
-# Configuración (importante no subir wp-config.php)
-/wp-config.php
 
 # Ignorar archivos específicos
 secret.txt
@@ -43,6 +41,8 @@ build/
 
 # Ignorar archivos en cualquier subcarpeta
 **/debug.log
+*.log
+*.tmp
 
-# Excepciones (¡NO ignorar!)
+# Excepciones
 !important.txt
