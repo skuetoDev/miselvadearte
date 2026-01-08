@@ -107,12 +107,13 @@ add_filter('excerpt_length', 'custom_excerpt_length');
 
 
 // Precargar fuentes críticas
-function preload_fuentes() {
-    $theme_uri = get_template_directory_uri();
-
-    echo '<link rel="preload" href="' . $theme_uri . '/assets/fonts/Raleway-Medium.woff2" as="font" type="font/woff2" crossorigin>' . "\n";
-    echo '<link rel="preload" href="' . $theme_uri . '/assets/fonts/Raleway-Bold.woff2" as="font" type="font/woff2" crossorigin>' . "\n";
-    echo '<link rel="preload" href="' . $theme_uri . '/assets/fonts/SansitaSwashed-Medium.woff2" as="font" type="font/woff2" crossorigin>' . "\n";
-    echo '<link rel="preload" href="' . $theme_uri . '/assets/fonts/SansitaSwashed-Bold.woff2" as="font" type="font/woff2" crossorigin>' . "\n";
+function cargar_fuentes_css()
+{
+    wp_enqueue_style(
+        'mis-fonts',
+        get_template_directory_uri() . '/assets/css/fonts.css',
+        [],
+        null
+    );
 }
-add_action('wp_head', 'preload_fuentes', 1);
+add_action('wp_enqueue_scripts', 'cargar_fuentes_css');
