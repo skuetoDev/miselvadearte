@@ -54,5 +54,5 @@ build/
 # Excepciones
 !important.txt
 
-# Tema personalizado
-*.woff2
+# Ignorar solo las fuentes del tema
+wp-content/themes/temaPrueba/assets/fonts/
