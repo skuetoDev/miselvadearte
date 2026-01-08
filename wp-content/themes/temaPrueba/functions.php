@@ -107,8 +107,7 @@ add_filter('excerpt_length', 'custom_excerpt_length');
 
 
 // Precargar fuentes críticas
-function cargar_fuentes_css()
-{
+function mis_fuentes_enqueue() {
     wp_enqueue_style(
         'mis-fonts',
         get_template_directory_uri() . '/assets/css/fonts.css',
@@ -116,4 +115,14 @@ function cargar_fuentes_css()
         null
     );
 }
-add_action('wp_enqueue_scripts', 'cargar_fuentes_css');
+add_action('wp_enqueue_scripts', 'mis_fuentes_enqueue', -999);
+
+function mis_fuentes_preload() {
+    $uri = get_template_directory_uri();
+
+    echo '<link rel="preload" href="' . $uri . '/assets/fonts/Raleway-Medium.woff2" as="font" type="font/woff2" crossorigin>' . "\n";
+    echo '<link rel="preload" href="' . $uri . '/assets/fonts/Raleway-Bold.woff2" as="font" type="font/woff2" crossorigin>' . "\n";
+    echo '<link rel="preload" href="' . $uri . '/assets/fonts/SansitaSwashed-Medium.woff2" as="font" type="font/woff2" crossorigin>' . "\n";
+    echo '<link rel="preload" href="' . $uri . '/assets/fonts/SansitaSwashed-Bold.woff2" as="font" type="font/woff2" crossorigin>' . "\n";
+}
+add_action('wp_head', 'mis_fuentes_preload', -999);
