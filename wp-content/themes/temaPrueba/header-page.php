@@ -11,24 +11,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
         <!-- para importar estilos desde functions.php -->
         <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.ico" type="image/x-icon"/>
-        <style id="critical-fonts">
-         @font-face {
-            font-family: 'Raleway';
-            src: url('<?php echo $theme_uri; ?>/assets/fonts/Raleway-Medium.woff2') format('woff2');
-            font-weight: 400;
-            font-style: normal;
-            font-display: swap;
-         }
-         @font-face {
-            font-family: 'Sansita Swashed';
-            src: url('<?php echo $theme_uri; ?>/assets/fonts/SansitaSwashed-Medium.woff2') format('woff2');
-            font-weight: 400;
-            font-style: normal;
-            font-display: swap;
-         }
-         </style>
-         <link rel="preload" href="<?php echo $theme_uri; ?>/assets/fonts/Raleway-Medium.woff2" as="font" type="font/woff2" crossorigin>
-         <link rel="preload" href="<?php echo $theme_uri; ?>/assets/fonts/SansitaSwashed-Medium.woff2" as="font" type="font/woff2" crossorigin>
         <?php wp_head(); ?>
       </head>
       <div id="page-wrapper">
