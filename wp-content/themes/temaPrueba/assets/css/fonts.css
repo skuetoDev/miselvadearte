@@ -1,0 +1,33 @@
+/* Raleway */
+@font-face {
+    font-family: 'Raleway';
+    src: url('../fonts/Raleway-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: optional;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('../fonts/Raleway-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: optional;
+}
+
+/* Sansita Swashed */
+@font-face {
+    font-family: 'Sansita Swashed';
+    src: url('../fonts/SansitaSwashed-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: optional;
+}
+
+@font-face {
+    font-family: 'Sansita Swashed';
+    src: url('../fonts/SansitaSwashed-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: optional;
+}
