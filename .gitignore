@@ -53,3 +53,6 @@ build/
 
 # Excepciones
 !important.txt
+
+# Tema personalizado
+*.woff2
