@@ -107,7 +107,8 @@ add_filter('excerpt_length', 'custom_excerpt_length');
 
 
 // Precargar fuentes críticas
-function mis_fuentes_css() {
+function mis_fuentes_css()
+{
     wp_enqueue_style(
         'mis-fonts',
         get_template_directory_uri() . '/assets/css/fonts.css',
