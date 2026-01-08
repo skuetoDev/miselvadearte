@@ -27,10 +27,8 @@
             font-display: swap;
          }
          </style>
-         <link rel="preload" href="<?php echo $theme_uri;
-            ?>/assets/fonts/Raleway-Medium.woff2" as="font" type="font/woff2" crossorigin>
-         <link rel="preload" href="<?php echo $theme_uri;
-            ?>/assets/fonts/SansitaSwashed-Medium.woff2" as="font" type="font/woff2" crossorigin>
+         <link rel="preload" href="<?php echo $theme_uri; ?>/assets/fonts/Raleway-Medium.woff2" as="font" type="font/woff2" crossorigin>
+         <link rel="preload" href="<?php echo $theme_uri; ?>/assets/fonts/SansitaSwashed-Medium.woff2" as="font" type="font/woff2" crossorigin>
         <?php wp_head(); ?>
       </head>
       <div id="page-wrapper">
