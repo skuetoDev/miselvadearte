@@ -106,58 +106,45 @@ function custom_excerpt_length($length)
 add_filter('excerpt_length', 'custom_excerpt_length');
 
 
-function mis_fuentes() {
+// Precargar fuentes críticas
+add_action('wp_head', function () {
     $theme_uri = get_template_directory_uri();
-
     // Preload
-    add_filter('wp_resource_hints', function ($hints, $relation_type) use ($theme_uri) {
-        if ($relation_type === 'preload') {
-            $hints[] = [
-                'href' => $theme_uri . '/assets/fonts/Raleway-Medium.woff2',
-                'as'   => 'font',
-                'type' => 'font/woff2',
-                'crossorigin' => 'anonymous'
-            ];
-            $hints[] = [
-                'href' => $theme_uri . '/assets/fonts/SansitaSwashed-Medium.woff2',
-                'as'   => 'font',
-                'type' => 'font/woff2',
-                'crossorigin' => 'anonymous'
-            ];
-        }
-        return $hints;
-    }, 10, 2);
-
-    // CSS con @font-face
-    wp_add_inline_style('wp-block-library', "
-        @font-face {
-            font-family: 'Raleway';
-            src: url('{$theme_uri}/assets/fonts/Raleway-Medium.woff2') format('woff2');
-            font-weight: 500;
-            font-style: normal;
-            font-display: swap;
-        }
-        @font-face {
-            font-family: 'Raleway';
-            src: url('{$theme_uri}/assets/fonts/Raleway-Bold.woff2') format('woff2');
-            font-weight: 700;
-            font-style: normal;
-            font-display: swap;
-        }
-        @font-face {
-            font-family: 'Sansita Swashed';
-            src: url('{$theme_uri}/assets/fonts/SansitaSwashed-Medium.woff2') format('woff2');
-            font-weight: 500;
-            font-style: normal;
-            font-display: swap;
-        }
-        @font-face {
-            font-family: 'Sansita Swashed';
-            src: url('{$theme_uri}/assets/fonts/SansitaSwashed-Bold.woff2') format('woff2');
-            font-weight: 700;
-            font-style: normal;
-            font-display: swap;
-        }
-    ");
-}
-add_action('wp_enqueue_scripts', 'mis_fuentes');
+    echo '<link rel="preload" href="' . $theme_uri .
+    '/assets/fonts/SansitaSwashed-Medium.woff2" as="font" type="font/woff2" crossorigin>' . "\n";
+    echo '<link rel="preload" href="' . $theme_uri .
+    '/assets/fonts/Raleway-Medium.woff2" as="font" type="font/woff2" crossorigin>' . "\n";
+    // Font-face inline (para evitar problemas de caché en móvil)
+    ?>
+    <style>
+    @font-face {
+        font-family: 'Raleway';
+        src: url('<?php echo $theme_uri; ?>/assets/fonts/Raleway-Medium.woff2') format('woff2');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'Raleway';
+        src: url('<?php echo $theme_uri; ?>/assets/fonts/Raleway-Bold.woff2') format('woff2');
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'Sansita Swashed';
+        src: url('<?php echo $theme_uri; ?>/assets/fonts/SansitaSwashed-Medium.woff2') format('woff2');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'Sansita Swashed';
+        src: url('<?php echo $theme_uri; ?>/assets/fonts/SansitaSwashed-Bold.woff2') format('woff2');
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+    }
+    </style>
+    <?php
+}, );
