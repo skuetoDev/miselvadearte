@@ -109,10 +109,11 @@ add_filter('excerpt_length', 'custom_excerpt_length');
 
 add_action('wp_head', function () {
     // Títulos (above the fold)
-    echo '<link rel="preload" href="/wp-content/themes/temaPrueba/assets/fonts/SansitaSwashed-Medium.woff2" 
+    $theme_uri = get_template_directory_uri();
+    echo '<link rel="preload" href="' . $theme_uri . '/assets/fonts/SansitaSwashed-Medium.woff2" 
     as="font" type="font/woff2" crossorigin>' . "\n";
 
     // Texto general (above the fold)
-    echo '<link rel="preload" href="/wp-content/themes/temaPrueba/assets/fonts/Raleway-Medium.woff2" 
+    echo '<link rel="preload" href="' . $theme_uri . '/assets/fonts/Raleway-Medium.woff2" 
     as="font" type="font/woff2" crossorigin>' . "\n";
 }, 1);
