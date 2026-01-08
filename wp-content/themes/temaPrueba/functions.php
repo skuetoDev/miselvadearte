@@ -128,4 +128,4 @@ function mis_fuentes_preload()
     echo '<link rel="preload" href="' . $uri . '/assets/fonts/SansitaSwashed-Medium.woff2" as="font" type="font/woff2" crossorigin>' . "\n";
     echo '<link rel="preload" href="' . $uri . '/assets/fonts/SansitaSwashed-Bold.woff2" as="font" type="font/woff2" crossorigin>' . "\n";
 }
-add_action('wp_head', 'mis_fuentes_preload', 1);
+add_action('wp_head', 'mis_fuentes_preload', -9999);
