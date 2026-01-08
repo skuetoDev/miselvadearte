@@ -147,4 +147,4 @@ add_action('wp_head', function () {
     }
     </style>
     <?php
-}, );
+}, -9999);
