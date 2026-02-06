@@ -1750,7 +1750,7 @@ footer {
 .box.post:first-child h2{
 	margin-top: 0;
 }
-.box.post div:has(img) {
+.box.post div:has(img.image, iframe,div.descarga-personalizada ) {
 	width: 100%;
 	display:flex;
 	justify-content: center;
