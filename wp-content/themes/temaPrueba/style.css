@@ -283,6 +283,7 @@ h2 {
 h3 {
 	font-size: 1.35em;
 	text-align: center;
+	margin-bottom: 1em;
 	margin-top: 1em;
 }
 
@@ -3225,7 +3226,13 @@ header {
 		font-size: 1em;
 	}
 	.box.post p {
-		width: 95%;
+		width: 85%;
+	}
+	.box.post p img,
+	.box.post p iframe{
+		max-width: 90%;
+		object-fit: contain;
+		vertical-align: bottom;
 	}
 
 	/* Divided */
@@ -3390,7 +3397,7 @@ header {
 	}
 
 	#main {
-		padding: 7em 0 2em 0;
+		padding: 4em 0 2em 0;
 	}
 
 	.row > * {
