@@ -1750,6 +1750,12 @@ footer {
 .box.post:first-child h2{
 	margin-top: 0;
 }
+.box.post p {
+		width: 100%;
+		display:flex;
+		justify-content: center;
+		align-items: center;
+	}
 
 .box.post p img,
 .box.post p iframe{
@@ -3244,12 +3250,7 @@ header {
 		margin-top: 0;
 		font-size: 1em;
 	}
-	.box.post p {
-		width: 85%;
-		display:flex;
-		justify-content: center;
-		align-items: center;
-	}
+	
 
 
 	/* Divided */
