@@ -2367,16 +2367,21 @@ ul.social li a.icon-twitch:hover::after {
 	background-size: cover;
 }
 
-#header h1 {
+#header .main-title {
 	font-family: 'Sansita Swashed', serif;
 	color: #f2f7f3;
 	font-weight: 900;
 	font-size: 6em;
 	letter-spacing: -0.035em;
 	line-height: 1.25em;
+	text-decoration: none;
 }
-#header h2 {
+#header .main-title:hover {
+	color: #fca04d;
+}
+#header .second-title {
 	color: #f2f7f3;
+	font-size: 1.45em;
 }
 
 /* Nav */
@@ -3180,6 +3185,9 @@ header {
 
 	header {
 		margin: 0 0 1em 0;
+	}
+	#header .main-title {
+		font-size: 3em;
 	}
 
 	footer {

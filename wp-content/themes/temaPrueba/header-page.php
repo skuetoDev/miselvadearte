@@ -17,8 +17,8 @@
          <!-- Header -->
          <section id="header">
             <!-- Logo -->
-            <a href="<?php echo home_url(); ?>"><?php echo bloginfo('name'); ?></a>
-            <h2><?php echo bloginfo('description'); ?></h2>
+            <a class="main-title" href="<?php echo home_url(); ?>"><?php echo bloginfo('name'); ?></a><br>
+            <span class="second-title"><?php echo bloginfo('description'); ?></span>
                <!-- Nav -->
                <section id="nav">
                   <?php
