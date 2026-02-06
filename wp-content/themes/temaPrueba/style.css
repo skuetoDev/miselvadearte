@@ -2153,7 +2153,9 @@ ul.divided li:first-child {
 
 .wp-block-heading {
 	font-family: 'Sansita Swashed', sans-serif;
-	margin-bottom: 1em;
+}
+.category ul {
+	margin-top: 2em;
 }
 /* Social */
 
@@ -2639,6 +2641,23 @@ p iframe {
 	background-size: 100% 100%;
 	z-index: 0;
 	opacity: 0.5;
+}
+#footer .background-image {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+	opacity: 0.1;
+	pointer-events: none;
+}
+#footer .background-image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 0;
+	
 }
 
 #footer a {
