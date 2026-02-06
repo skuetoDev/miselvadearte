@@ -1,58 +1,26 @@
-# WordPress Core
-/wp-admin/
-/wp-includes/
-/wp-*.php
-/index.php
-license.txt
-readme.html
-xmlrpc.php
-
-# Configuración
-/wp-config.php
-/.htaccess
-/.htaccess.bk
-
-# Plugins
-/wp-content/plugins/
-
-# Must-use plugins de hosting
-/wp-content/mu-plugins/
-
-# Themes
-/wp-content/themes/*
-!/wp-content/themes/temaPrueba/
-
-# Uploads, cache, traducciones y LiteSpeed
-/wp-content/uploads/
-/wp-content/cache/
-/wp-content/upgrade/
-/wp-content/languages/
-/wp-content/litespeed/
-
-# Base de datos
-*.sql
-*.sql.gz
-
-# Backups
-*.bk
-*.backup
-
-# Ignorar archivos específicos
-secret.txt
-config.php
-
-# Ignorar carpetas completas
-node_modules/
-dist/
-build/
-
 # Logs
-**/debug.log
 *.log
-*.tmp
+wp-content/debug.log
 
-# Excepciones
-!important.txt
+# WordPress core (si no quieres versionarlo)
+wp-admin/
+wp-includes/
 
-# Ignorar solo las fuentes del tema
-wp-content/themes/temaPrueba/assets/fonts/
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Archivos temporales
+*.old
+.htaccess.old*
+#Archivos subidos a WordPress
+wp-content/uploads/
+#archivo de configuracion de wp-config.php
+wp-config.php
+
+
+# Dependencias
+/vendor/
+node_modules/
+# Plugins
+wp-content/plugins/
