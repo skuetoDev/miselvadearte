@@ -1765,25 +1765,18 @@ footer {
 	align-items: center;
 }
 
-.box.post p img,
-.box.post p iframe{
-	margin: 1.5em 0 ;
-}
-
 .box img,
 .box-index img {
 	max-width: 100%;
 	height: auto;
 }
 
-.box.post img {
+.box.post img,
+.box.post iframe {
 	display: block;
-	margin: 0 auto;
-}
-
-.box iframe,
-.box-index iframe {
 	max-width: 100%;
+	margin: 1.5em auto;
+	height: auto;
 }
 
 .box.post header > p {
