@@ -11,7 +11,7 @@
       <div id="page-wrapper">
          <!-- Header -->
          <!-- Main -->
-         <section id="main">
+         <section id="main" role="main">
             <div class="container">
                <div class="row">
                   <?php
