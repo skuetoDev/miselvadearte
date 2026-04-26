@@ -36,17 +36,19 @@
                </header>
                <ul class="social">
                   <li>
-                     <a class="icon fa-facebook" 
+                     <a class="icon icon-facebook"
                         href="https://www.facebook.com/profile.php?id=100080465887995" target="_blank"
-                        aria-label="Ver en facebook de scraplion"
-                        ><span class="label">Facebook</span></a
-                     >
+                        aria-label="Ver en facebook de scraplion">
+                        <span class="label">Facebook</span>
+                        <img class="facebook" src="<?php echo get_template_directory_uri(); ?>/images/facebook.svg" alt="Facebook" width="32" height="32" />
+                     </a>
                   </li>
                   <li>
-                     <a class="icon fa-instagram" href="https://www.instagram.com/scrap.lion/" target="_blank"
-                     aria-label="Ver en instagram de scraplion"
-                        ><span class="label">Instagram</span></a
-                     >
+                     <a class="icon icon-instagram" href="https://www.instagram.com/scrap.lion/" target="_blank"
+                        aria-label="Ver en instagram de scraplion">
+                        <span class="label">Instagram</span>
+                        <img class="instagram" src="<?php echo get_template_directory_uri(); ?>/images/instagram.svg" alt="Instagram" width="32" height="32" />
+                     </a>
                   </li>
                   <li>
                     <a class="icon icon-tiktok" href="https://www.tiktok.com/@scrap.lion" target="_blank"
@@ -58,9 +60,10 @@
                     </a>
                   </li>
                   <li>
-                     <a class="icon fa-youtube" href="https://www.youtube.com/@scraplion2758" target="_blank" aria-label="Ver en youtube de scraplion"
-                        ><span class="label">YouTube</span></a
-                     >
+                     <a class="icon icon-youtube" href="https://www.youtube.com/@scraplion2758" target="_blank" aria-label="Ver en youtube de scraplion">
+                        <span class="label">YouTube</span>
+                        <img class="youtube" src="<?php echo get_template_directory_uri(); ?>/images/youtube.svg" alt="YouTube" width="32" height="32" />
+                     </a>
                   </li>
                   <li>
                     <a class="icon icon-twitch" href="https://www.twitch.tv/scraplion" target="_blank" aria-label="Ver twitch de scraplion">

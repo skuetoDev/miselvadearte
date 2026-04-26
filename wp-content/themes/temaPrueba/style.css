@@ -2223,34 +2223,51 @@ ul.social li a:before {
 	line-height: 1.5em;
 }
 
-ul.social li a.fa-facebook {
-	background: #0866ff;
-	margin-top: 0.1em;
-	transition: all 0.5s ease-in-out;
+ul.social li a.icon-facebook,
+ul.social li a.icon-instagram,
+ul.social li a.icon-youtube {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	top: 0.75em;
 }
 
-ul.social li a.fa-facebook:hover {
+ul.social li a.icon-facebook img,
+ul.social li a.icon-instagram img,
+ul.social li a.icon-youtube img {
+	width: 2em;
+	height: 2em;
+	object-fit: contain;
+	display: block;
+}
+
+ul.social li a.icon-facebook {
+	background: #0866ff;
+	transition: background-color 0.5s ease-in-out;
+}
+
+ul.social li a.icon-facebook:hover {
 	background: #043d99;
 }
 
-ul.social li a.fa-instagram {
+ul.social li a.icon-instagram {
 	background-image: linear-gradient(45deg, #fdf497, #fd5949, #d6249f, #285aeb);
 	background-size: 200%;
 	background-position: left;
 	transition: background-position 0.5s ease-in-out;
 }
 
-ul.social li a.fa-instagram:hover {
+ul.social li a.icon-instagram:hover {
 	background-position: right;
 }
 
-ul.social li a.fa-youtube {
+ul.social li a.icon-youtube {
 	background: #ff0033;
 }
 
-ul.social li a.fa-youtube:hover {
+ul.social li a.icon-youtube:hover {
 	background: #b30e2f;
-	transition: all 0.5s ease-in-out;
+	transition: background-color 0.5s ease-in-out;
 }
 ul.social li a.icon-tiktok {
 	display: flex;
@@ -2321,9 +2338,6 @@ ul.social li a.icon-twitch:hover::after {
 }
 
 .icon:before {
-	-moz-osx-font-smoothing: grayscale;
-	-webkit-font-smoothing: antialiased;
-	font-family: FontAwesome;
 	font-style: normal;
 	font-weight: normal;
 	text-transform: none !important;
@@ -3088,13 +3102,10 @@ header {
 	}
 
 	#titleBar .toggle:before {
-		font-family: FontAwesome;
-		text-decoration: none;
+		font-family: system-ui, Arial, sans-serif;
 		font-style: normal;
 		font-weight: normal;
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
-		content: '\f0c9';
+		content: '\2630';
 		display: block;
 		position: absolute;
 		left: 10px;

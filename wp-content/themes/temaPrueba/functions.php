@@ -92,21 +92,7 @@ if (function_exists('register_sidebar')) {
             ));
 }
 
-// para añadir la fuentes/iconos del tema
-function add_fontawesome()
-{
-    wp_enqueue_style('font-awesome', get_template_directory_uri() . '/assets/css/font-awesome.min.css');
-}
-add_action('wp_enqueue_scripts', 'add_fontawesome');
 
-// Añadir font-display: swap a FontAwesome para que no bloquee el FCP
-add_filter('style_loader_tag', function ($html, $handle) {
-    if ($handle === 'font-awesome') {
-        $font_url = get_template_directory_uri() . '/assets/fonts/fontawesome-webfont.woff2?v=4.7.0';
-        $html .= '<style>@font-face{font-family:"FontAwesome";src:url("' . $font_url . '") format("woff2");font-display:swap}</style>' . "\n";
-    }
-    return $html;
-}, 10, 2);
 
 function custom_excerpt_length($length)
 {
@@ -132,8 +118,7 @@ function mis_fuentes_preload()
 {
     $uri = get_template_directory_uri();
 
-    echo '<link rel="preload" href="' . $uri . '/images/jungle.webp" as="image" type="image/webp" fetchpriority="high">' . "\n";
-    echo '<link rel="preload" href="' . $uri . '/assets/fonts/fontawesome-webfont.woff2?v=4.7.0" as="font" type="font/woff2" crossorigin>' . "\n";
+    echo '<link rel="preload" href="' . $uri . '/images/jungle.webp" as="image" type="image/webp" fetchpriority="high" media="(min-width: 1024px)">' . "\n";
     echo '<link rel="preload" href="' . $uri . '/assets/fonts/Raleway-Medium.woff2" as="font" type="font/woff2" crossorigin>' . "\n";
     echo '<link rel="preload" href="' . $uri . '/assets/fonts/Raleway-Bold.woff2" as="font" type="font/woff2" crossorigin>' . "\n";
     echo '<link rel="preload" href="' . $uri . '/assets/fonts/SansitaSwashed-Medium.woff2" as="font" type="font/woff2" crossorigin>' . "\n";
