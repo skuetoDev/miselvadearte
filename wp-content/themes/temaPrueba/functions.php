@@ -130,31 +130,6 @@ function mis_fuentes_preload()
 }
 add_action('wp_head', 'mis_fuentes_preload', -9999);
 
-// Añadir srcset a imágenes de contenido que no lo tienen (ej. logo insertado como URL directa)
-add_filter('wp_content_img_tag', function ($tag, $context, $attachment_id) {
-    if (strpos($tag, 'srcset') !== false) {
-        return $tag;
-    }
-    if (!$attachment_id) {
-        preg_match('/src=["\']([^"\']+)["\']/', $tag, $m);
-        if (!empty($m[1])) {
-            $attachment_id = attachment_url_to_postid($m[1]);
-        }
-    }
-    if ($attachment_id) {
-        $srcset = wp_get_attachment_image_srcset($attachment_id, 'full');
-        $sizes  = wp_get_attachment_image_sizes($attachment_id, 'full');
-        if ($srcset && $sizes) {
-            $tag = str_replace(
-                '<img ',
-                '<img srcset="' . esc_attr($srcset) . '" sizes="' . esc_attr($sizes) . '" ',
-                $tag
-            );
-        }
-    }
-    return $tag;
-}, 10, 3);
-
 // eliminar estilos de bloques Gutenberg que no usas en un tema clásico
 add_action( 'wp_enqueue_scripts', function() {
     wp_dequeue_style( 'wp-block-library' );
