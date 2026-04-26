@@ -141,26 +141,6 @@ add_action( 'wp_enqueue_scripts', function() {
 }, 100 );
 
 
-add_filter('script_loader_tag', function($tag, $handle) {
-    if ($handle === 'google-tag-manager') {
-        return str_replace('<script ', '<script defer ', $tag);
-    }
-    return $tag;
-}, 10, 2);
-
-add_filter('script_loader_tag', function($tag, $handle) {
-    $defer = [
-        'googlesitekit-tracking-opt-out',
-        'googlesitekit_acr-js',
-        'google_gtagjs',
-    ];
-    foreach ($defer as $script) {
-        if (strpos($handle, $script) !== false) {
-            return str_replace('<script ', '<script defer ', $tag);
-        }
-    }
-    return $tag;
-}, 10, 2);
 
 // Forzar que el logo (ID 730) sirva solo la versión 300x270 en el contenido
 add_filter('wp_content_img_tag', function($filtered_image, $context, $attachment_id) {

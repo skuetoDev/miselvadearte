@@ -2194,6 +2194,7 @@ ul.social {
 
 ul.social li {
 	display: inline-block;
+	vertical-align: middle;
 	padding-left: 0;
 	margin-left: 0.75em;
 }
