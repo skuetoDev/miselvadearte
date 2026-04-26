@@ -3468,7 +3468,7 @@ header {
 	}
 }
 
-.box.post img.img-404 {
+.box.post-404 img.img-404 {
    width: 80%;
    max-width: 400px;
    height: auto;
