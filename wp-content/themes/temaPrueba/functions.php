@@ -171,7 +171,7 @@ add_filter('script_loader_tag', function($tag, $handle) {
 }, 10, 2);
 
 add_filter('wp_calculate_image_srcset', function($sources, $size_array, $image_src, $image_meta, $attachment_id) {
-    if ($attachment_id == 716) { // ID de tu logo
+    if ($attachment_id == 730) { // ID de tu logo
         // Solo devolver el tamaño 300x270
         foreach ($sources as $key => $source) {
             if ($source['value'] > 300) {
@@ -183,7 +183,7 @@ add_filter('wp_calculate_image_srcset', function($sources, $size_array, $image_s
 }, 10, 5);
 
 add_filter('wp_get_attachment_image_src', function($image, $attachment_id, $size) {
-    if ($attachment_id == 716 && $size === 'medium') {
+    if ($attachment_id == 730 && $size === 'medium') {
         $image[0] = str_replace('logo-768x690.webp', 'logo-300x270.webp', $image[0]);
     }
     return $image;
