@@ -2229,7 +2229,6 @@ ul.social li a.icon-youtube {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	top: 0.75em;
 }
 
 ul.social li a.icon-facebook img,
@@ -2278,7 +2277,6 @@ ul.social li a.icon-tiktok {
 	background-size: 200%;
 	border-radius: 5px;
 	position: relative;
-	top: 0.75em;
 	overflow: hidden;
 }
 
@@ -2314,7 +2312,6 @@ ul.social li a.icon-twitch {
 	background-size: 200%;
 	border-radius: 5px;
 	position: relative;
-	top: 0.75em;
 	overflow: hidden;
 }
 ul.social li a.icon-twitch::after {

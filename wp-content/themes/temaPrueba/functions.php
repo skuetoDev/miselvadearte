@@ -121,10 +121,17 @@ function mis_fuentes_preload()
     echo '<link rel="preload" href="' . $uri . '/images/jungle.webp" as="image" type="image/webp" fetchpriority="high" media="(min-width: 1024px)">' . "\n";
     echo '<link rel="preload" href="' . $uri . '/assets/fonts/Raleway-Medium.woff2" as="font" type="font/woff2" crossorigin>' . "\n";
     echo '<link rel="preload" href="' . $uri . '/assets/fonts/Raleway-Bold.woff2" as="font" type="font/woff2" crossorigin>' . "\n";
-    echo '<link rel="preload" href="' . $uri . '/assets/fonts/SansitaSwashed-Medium.woff2" as="font" type="font/woff2" crossorigin>' . "\n";
+    echo '<link rel="preload" href="' . $uri . '/assets/fonts/SansitaSwashed-Medium.woff2" as="font" type="font/woff2" crossorigin fetchpriority="high">' . "\n";
     echo '<link rel="preload" href="' . $uri . '/assets/fonts/SansitaSwashed-Bold.woff2" as="font" type="font/woff2" crossorigin>' . "\n";
 }
 add_action('wp_head', 'mis_fuentes_preload', -9999);
+
+// Mover jQuery al footer para que no bloquee el render
+add_action('wp_enqueue_scripts', function() {
+    wp_scripts()->add_data('jquery', 'group', 1);
+    wp_scripts()->add_data('jquery-core', 'group', 1);
+    wp_scripts()->add_data('jquery-migrate', 'group', 1);
+}, 999);
 
 // eliminar estilos de bloques Gutenberg que no usas en un tema clásico
 add_action( 'wp_enqueue_scripts', function() {
