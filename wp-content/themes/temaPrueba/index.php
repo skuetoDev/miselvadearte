@@ -14,6 +14,7 @@
          <section id="main" role="main">
             <div class="container">
                <div class="row">
+                  <h1>Aquí podrás encontrar todos los posts publicados en Mis Selva de Arte.</h1>
                   <?php
                      // Obtener todas las categorías (puedes excluir las vacías si quieres)
                      $categories = get_categories(array(

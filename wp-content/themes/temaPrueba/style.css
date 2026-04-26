@@ -2367,13 +2367,19 @@ ul.social li a.icon-twitch:hover::after {
 /* Header */
 
 #header {
-	position: relative;
-	background: #ffffff;
-	border-bottom: solid 1px #ccc;
-	padding: 4em 0 1em 0;
-	text-align: center;
-	background-image: url('images/jungle.webp');
-	background-size: cover;
+   position: relative;
+   background: #ffffff;
+   border-bottom: solid 1px #ccc;
+   padding: 4em 0 1em 0;
+   text-align: center;
+   background-image: url('images/jungle-mobile.webp');
+   background-size: cover;
+}
+
+@media (min-width: 1024px) {
+   #header {
+      background-image: url('images/jungle.webp');
+   }
 }
 
 #header .main-title {
