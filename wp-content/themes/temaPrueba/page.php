@@ -3,7 +3,7 @@
       <!-- Main -->
       <section id="main" role="main">
          <div class="container">
-
+            <h1> Aqui podrás encontrar todos los posts de la web. </h1>
             <!-- Content -->
             <?php
             if (have_posts()) :
