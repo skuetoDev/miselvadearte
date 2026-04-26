@@ -2592,7 +2592,7 @@ ul.social li a.icon-twitch:hover::after {
 
 #main {
 	position: relative;
-	padding: 4em 0 4em 0;
+	padding: 2em 0 4em 0;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -2633,6 +2633,7 @@ p iframe {
 h1.title {
    text-align: center;
    padding: 1em 2em;
+	margin: 2em;
 	
 }
 
