@@ -8,7 +8,7 @@
                <!-- Portfolio -->
                   <section>
                         <header class="major">
-                           <h2>
+                           <h1>
                               <?php
                                 if (is_category()) {
                                     single_cat_title();
@@ -16,7 +16,16 @@
                                     echo wp_get_document_title();
                                 }
                                 ?>
-                           </h2>
+                           </h1>
+                           <p>
+                              <?php
+                                if (is_category()) {
+                                    echo 'Aquí podrás encontrar todos los posts sobre  <strong>' . single_cat_title('', false) . '</strong>.';
+                                } else {
+                                    echo 'Aquí podrás encontrar todos los posts de la web.';
+                                }
+                              ?>
+                           </p>
                         </header>
                         <div class="row">
                         <?php $id_categoria = get_query_var('cat');?>
