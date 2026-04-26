@@ -1734,7 +1734,7 @@ footer {
 }
 
 .box.post h1 {
-	font-size: 3em;
+	font-size: 2em;
 	letter-spacing: -0.015em;
 	color: #2c76e0;
 	margin-bottom: 1.5em;
@@ -2630,11 +2630,10 @@ p iframe {
 	margin-bottom: 0.5em;
 	color: #2c76e0;
 }
+h1.title-404,
 h1.title {
    text-align: center;
    padding: 1em 2em 3em 2em;
-	font-size: 2em;
-	
 }
 
 
