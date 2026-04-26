@@ -1718,6 +1718,7 @@ footer {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	overflow-x: hidden;
 }
 .box h2 {
 	color: #FCA04D;
@@ -1764,6 +1765,17 @@ footer {
 	margin: 1.5em 0 ;
 }
 
+.box img,
+.box-index img {
+	max-width: 100%;
+	height: auto;
+}
+
+.box iframe,
+.box-index iframe {
+	max-width: 100%;
+}
+
 .box.post header > p {
 	margin-top: 1.25em;
 	font-size: 1.25em;
@@ -1785,6 +1797,7 @@ footer {
 	flex-direction: column;
 	align-items: center;
 	border: solid 1px #c67cff;
+	overflow-x: hidden;
 }
 
 .box-index .image.featured {
