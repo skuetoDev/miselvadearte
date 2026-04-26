@@ -54,7 +54,7 @@
                        >
                        <span class="label">TikTok</span>
                        <img class="tiktok" src="<?php echo get_template_directory_uri();
-                        ?>/images/tiktok1.svg" alt="TikTok" />
+                        ?>/images/tiktok1.svg" alt="TikTok" width="48" height="48" />
                     </a>
                   </li>
                   <li>
@@ -66,7 +66,7 @@
                     <a class="icon icon-twitch" href="https://www.twitch.tv/scraplion" target="_blank" aria-label="Ver twitch de scraplion">
                        <span class="label">Twitch</span>
                        <img class="twitch" src="<?php echo get_template_directory_uri();
-                        ?>/images/twitch.svg" alt="Twitch" />
+                        ?>/images/twitch.svg" alt="Twitch" width="48" height="48" />
                     </a>
                   </li>
                </ul>
