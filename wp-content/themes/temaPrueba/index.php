@@ -1,9 +1,4 @@
 <!DOCTYPE HTML>
-<!--
-    Dopetrope by HTML5 UP
-    html5up.net | @ajlkn
-    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html <?php language_attributes(); ?>>
    
    <?php get_header('page'); ?> 
@@ -11,10 +6,10 @@
       <div id="page-wrapper">
          <!-- Header -->
          <!-- Main -->
+         <h1>Aquí podrás encontrar todos los posts publicados en Mis Selva de Arte.</h1>
          <section id="main" role="main">
             <div class="container">
                <div class="row">
-                  <h1>Aquí podrás encontrar todos los posts publicados en Mis Selva de Arte.</h1>
                   <?php
                      // Obtener todas las categorías (puedes excluir las vacías si quieres)
                      $categories = get_categories(array(
