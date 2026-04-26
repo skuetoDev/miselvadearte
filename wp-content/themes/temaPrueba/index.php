@@ -6,7 +6,7 @@
       <div id="page-wrapper">
          <!-- Header -->
          <!-- Main -->
-         <h1>Aquí podrás encontrar todos los posts publicados en Mis Selva de Arte.</h1>
+         <h1 class= "title">Aquí podrás encontrar todos los posts publicados en Mis Selva de Arte.</h1>
          <section id="main" role="main">
             <div class="container">
                <div class="row">
