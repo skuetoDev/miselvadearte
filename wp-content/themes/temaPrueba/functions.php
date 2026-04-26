@@ -131,16 +131,6 @@ function mis_fuentes_preload()
 }
 add_action('wp_head', 'mis_fuentes_preload', -9999);
 
-// FontAwesome no bloquea el render
-add_filter('style_loader_tag', function ($html, $handle) {
-    if ($handle === 'font-awesome') {
-        $async = preg_replace('/media=[\'"]all[\'"]/', 'media="print" onload="this.media=\'all\'"', $html);
-        $noscript = '<noscript>' . $html . '</noscript>' . "\n";
-        return $async . $noscript;
-    }
-    return $html;
-}, 10, 2);
-
 // eliminar estilos de bloques Gutenberg que no usas en un tema clásico
 add_action( 'wp_enqueue_scripts', function() {
     wp_dequeue_style( 'wp-block-library' );
@@ -170,21 +160,14 @@ add_filter('script_loader_tag', function($tag, $handle) {
     return $tag;
 }, 10, 2);
 
-add_filter('wp_calculate_image_srcset', function($sources, $size_array, $image_src, $image_meta, $attachment_id) {
-    if ($attachment_id == 730) { // ID de tu logo
-        // Solo devolver el tamaño 300x270
-        foreach ($sources as $key => $source) {
-            if ($source['value'] > 300) {
-                unset($sources[$key]);
-            }
-        }
+// Forzar que el logo (ID 730) sirva solo la versión 300x270 en el contenido
+add_filter('wp_content_img_tag', function($filtered_image, $context, $attachment_id) {
+    if ((int) $attachment_id !== 730) {
+        return $filtered_image;
     }
-    return $sources;
-}, 10, 5);
-
-add_filter('wp_get_attachment_image_src', function($image, $attachment_id, $size) {
-    if ($attachment_id == 730 && $size === 'medium') {
-        $image[0] = str_replace('logo-768x690.webp', 'logo-300x270.webp', $image[0]);
-    }
-    return $image;
+    $src_300 = wp_get_upload_dir()['baseurl'] . '/logo3-300x270.webp';
+    $filtered_image = preg_replace('/\ssrc="[^"]*"/', ' src="' . $src_300 . '"', $filtered_image);
+    $filtered_image = preg_replace('/\ssrcset="[^"]*"/', ' srcset="' . $src_300 . ' 300w"', $filtered_image);
+    $filtered_image = preg_replace('/\ssizes="[^"]*"/', ' sizes="300px"', $filtered_image);
+    return $filtered_image;
 }, 10, 3);
