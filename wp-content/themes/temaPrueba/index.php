@@ -7,8 +7,8 @@
          <!-- Header -->
          <!-- Main -->
          <section id="main" role="main">
-            <h1 class= "title">Aquí podrás encontrar todos las categorías de Mis Selva de Arte.</h1>
             <div class="container">
+               <h1 class= "title">Aquí podrás encontrar todos las categorías de Mis Selva de Arte.</h1>
                <div class="row">
                   <?php
                      // Obtener todas las categorías (puedes excluir las vacías si quieres)
