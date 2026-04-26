@@ -2634,8 +2634,9 @@ h1.title-404,
 h1.title {
    text-align: center;
    padding: 1em 2em 1em 2em;
+	font-size: 2em;
+	color: #2c76e0;
 }
-
 
 /* Footer */
 
