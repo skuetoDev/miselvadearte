@@ -290,7 +290,7 @@ h3 {
 .box.post a {
 	color:#182519;
 	text-decoration: underline;
-	text-decoration-color: #285aeb;
+	text-decoration-color: #c67cff;
 	text-underline-offset: 3px;
 	font-weight: 700;
 }
@@ -2375,8 +2375,10 @@ ul.social li a.icon-twitch:hover::after {
    padding: 4em 0 1em 0;
    text-align: center;
    background-image: url('images/jungle.webp');
-   background-position: center top; /* ajusta qué parte de la imagen se ve */
-   height: 200px; /* altura fija de la barra */
+   background-position: center top;
+   background-size: cover;
+   background-repeat: no-repeat;
+   height: 200px;
 }
 
 @media (min-width: 1024px) {
@@ -3332,7 +3334,7 @@ header {
 
 	#header {
 		text-align: center;
-		padding: 2em 0;
+		padding: 3.5em 0 1em 0;
 	}
 
 	#header h1 {
