@@ -287,15 +287,17 @@ h3 {
 	margin-top: 1em;
 }
 
-a {
-	color: #2c76e0;
+.box.post a {
+	color:#182519;
 	text-decoration: underline;
+	text-decoration-color: #c67cff;
 	text-underline-offset: 3px;
+	font-weight: 700;
 }
 
-a:hover {
+.box.post a:hover {
 	text-decoration: none;
-	color: #c67cff;
+	
 }
 
 br.clear {
@@ -2373,12 +2375,14 @@ ul.social li a.icon-twitch:hover::after {
    padding: 4em 0 1em 0;
    text-align: center;
    background-image: url('images/jungle-mobile.webp');
-   background-size: cover;
+   background-position: center top; /* ajusta qué parte de la imagen se ve */
+   height: 200px; /* altura fija de la barra */
 }
 
 @media (min-width: 1024px) {
    #header {
       background-image: url('images/jungle.webp');
+		height: 300px;
    }
 }
 
