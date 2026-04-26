@@ -7,7 +7,7 @@
          <!-- Header -->
          <!-- Main -->
          <section id="main" role="main">
-            <h1 class= "title">Aquí podrás encontrar todos los posts publicados en Mis Selva de Arte.</h1>
+            <h1 class= "title">Aquí podrás encontrar todos las categorías de Mis Selva de Arte.</h1>
             <div class="container">
                <div class="row">
                   <?php
