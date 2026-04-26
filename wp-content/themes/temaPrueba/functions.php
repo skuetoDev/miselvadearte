@@ -147,3 +147,25 @@ add_action( 'wp_enqueue_scripts', function() {
     wp_dequeue_style( 'wp-block-library-theme' );
     wp_dequeue_style( 'global-styles' );
 }, 100 );
+
+
+add_filter('script_loader_tag', function($tag, $handle) {
+    if ($handle === 'google-tag-manager') {
+        return str_replace('<script ', '<script defer ', $tag);
+    }
+    return $tag;
+}, 10, 2);
+
+add_filter('script_loader_tag', function($tag, $handle) {
+    $defer = [
+        'googlesitekit-tracking-opt-out',
+        'googlesitekit_acr-js',
+        'google_gtagjs',
+    ];
+    foreach ($defer as $script) {
+        if (strpos($handle, $script) !== false) {
+            return str_replace('<script ', '<script defer ', $tag);
+        }
+    }
+    return $tag;
+}, 10, 2);
