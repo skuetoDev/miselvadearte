@@ -1731,9 +1731,14 @@ footer {
 	top: 1.75em;
 }
 
+.box.post {
+	align-items: stretch;
+}
+
 .box.post header {
 	padding-top: 1em;
 	margin: 0 0 2em 0;
+	text-align: center;
 }
 
 .box.post h1 {
@@ -1769,6 +1774,11 @@ footer {
 .box-index img {
 	max-width: 100%;
 	height: auto;
+}
+
+.box.post img {
+	display: block;
+	margin: 0 auto;
 }
 
 .box iframe,
@@ -2637,12 +2647,11 @@ p iframe {
 
 /* margen para el slider de la pagina quien soy */
 
-#metaslider_176 {
-	margin-bottom: 1em;
-	margin: 0 auto;
-}
+#metaslider_176,
 #metalslider-id-176 {
-	margin: 0 auto;
+	width: 100%;
+	max-width: 100%;
+	margin: 0 auto 1em;
 }
 .h1-about-me {
 	font-size: 3em;
