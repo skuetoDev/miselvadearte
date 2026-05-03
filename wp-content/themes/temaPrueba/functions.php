@@ -151,6 +151,26 @@ add_action('wp_head', function() {
 }, 0);
 remove_action('wp_head', 'wp_site_icon', 99);
 
+// Bloquear Google Tag (gtag.js) - no usado, guardado en BD de produccion
+add_action('template_redirect', function() {
+    if (is_admin()) return;
+    ob_start(function($html) {
+        // Eliminar el script externo de googletagmanager
+        $html = preg_replace(
+            '/<script\b[^>]*src=["\'][^"\']*googletagmanager\.com[^"\']*["\'][^>]*>\s*<\/script>/i',
+            '',
+            $html
+        );
+        // Eliminar el snippet inline de configuracion de gtag (dataLayer)
+        $html = preg_replace(
+            '/<script\b[^>]*>\s*window\.dataLayer\s*=[\s\S]*?<\/script>/i',
+            '',
+            $html
+        );
+        return $html;
+    });
+});
+
 // eliminar estilos de bloques Gutenberg que no usas en un tema clásico
 add_action( 'wp_enqueue_scripts', function() {
     wp_dequeue_style( 'wp-block-library' );
