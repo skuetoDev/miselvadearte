@@ -51,7 +51,7 @@ add_action('wp_enqueue_scripts', 'recursos');
 // phpcs:ignore PSR1.Files.SideEffects.FoundWithSymbols
 register_nav_menus(
     array(
-      'principal' => 'Menu principal'
+        'principal' => 'Menu principal'
     )
 );
 
@@ -69,7 +69,7 @@ if (function_exists('add_theme_support')) {
 // Activando el soporte para los sidebar
 
 if (function_exists('register_sidebar')) {
-       /**
+        /**
         * Creates a sidebar
         * @param string|array  Builds Sidebar based off of 'name' and 'id' values.
         */
@@ -84,10 +84,10 @@ if (function_exists('register_sidebar')) {
         //     'after_title'   => ''
         // );
         // register_sidebar( $args );
-       register_sidebar(array(
+        register_sidebar(array(
             'name' => 'footer ultimas entradas'
             ));
-       register_sidebar(array(
+        register_sidebar(array(
             'name' => 'categorias'
             ));
 }
@@ -118,7 +118,7 @@ function mis_fuentes_preload()
 {
     $uri = get_template_directory_uri();
 
-    echo '<link rel="preload" href="' . $uri . '/images/jungle.webp" as="image" type="image/webp" fetchpriority="high" media="(min-width: 1024px)">' . "\n";
+    echo '<link rel="preload" href="' . $uri . '/images/jungle.webp" as="image" type="image/webp" fetchpriority="high">' . "\n";
     echo '<link rel="preload" href="' . $uri . '/assets/fonts/Raleway-Medium.woff2" as="font" type="font/woff2" crossorigin>' . "\n";
     echo '<link rel="preload" href="' . $uri . '/assets/fonts/Raleway-Bold.woff2" as="font" type="font/woff2" crossorigin>' . "\n";
     echo '<link rel="preload" href="' . $uri . '/assets/fonts/SansitaSwashed-Bold.woff2" as="font" type="font/woff2" crossorigin fetchpriority="high">' . "\n";
@@ -132,6 +132,24 @@ add_action('wp_enqueue_scripts', function() {
     wp_scripts()->add_data('jquery-core', 'group', 1);
     wp_scripts()->add_data('jquery-migrate', 'group', 1);
 }, 999);
+
+// Eliminar jQuery Migrate (no necesario en sitios modernos)
+function quitar_jquery_migrate($scripts) {
+    if (!is_admin() && isset($scripts->registered['jquery'])) {
+        $scripts->registered['jquery']->deps = array_diff(
+            $scripts->registered['jquery']->deps,
+            array('jquery-migrate')
+        );
+    }
+}
+add_filter('wp_default_scripts', 'quitar_jquery_migrate');
+
+// Favicon canónico desde la raíz del dominio
+add_action('wp_head', function() {
+    echo '<link rel="icon" href="' . esc_url(home_url('/favicon.ico')) . '" type="image/x-icon">' . "\n";
+    echo '<link rel="shortcut icon" href="' . esc_url(home_url('/favicon.ico')) . '" type="image/x-icon">' . "\n";
+}, 0);
+remove_action('wp_head', 'wp_site_icon', 99);
 
 // eliminar estilos de bloques Gutenberg que no usas en un tema clásico
 add_action( 'wp_enqueue_scripts', function() {
