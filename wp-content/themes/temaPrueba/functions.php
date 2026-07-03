@@ -10,7 +10,7 @@ function recursos()
         update_option('medium_large_size_w', 0);
         update_option('medium_large_size_h', 0);
     });
-    
+
     wp_enqueue_style('style', get_stylesheet_uri());
     //wp_enqueue_script($manejador,fuente);
     //hay que poner wp_footer en el footer.php para que esta funcion sirvan.
@@ -199,4 +199,13 @@ add_filter('wp_content_img_tag', function($filtered_image, $context, $attachment
     $filtered_image = preg_replace('/\ssizes="[^"]*"/', ' sizes="300px"', $filtered_image);
     return $filtered_image;
 }, 10, 3);
+
+// Fuerza la calidad de compresión WebP para TODOS los tamaños generados
+// (thumbnail, medium, medium_large, large, 1536, 2048, scaled...)
+add_filter('wp_editor_set_quality', function($quality, $mime_type) {
+    if ($mime_type === 'image/webp') {
+        return 60;
+    }
+    return $quality;
+}, 10, 2);
 
