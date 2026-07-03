@@ -2469,7 +2469,7 @@ ul.social li a.icon-twitch:hover::after {
 
 #nav > ul > li:hover > a,
 #nav > ul > li.active > a {
-	background: FCA04D;
+	background: #FCA04D;
 	background-color: #fca04d;
 }
 

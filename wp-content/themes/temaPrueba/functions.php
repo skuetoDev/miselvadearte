@@ -158,36 +158,6 @@ function custom_excerpt_length($length)
 add_filter('excerpt_length', 'custom_excerpt_length');
 
 
-/**
- * ============================================================
- * FUENTES (inline + preload)
- * ============================================================
- */
-
-// fonts.css es tan pequeño (0,8 KiB) que se inserta inline en el <head>
-// y así eliminamos una petición que bloquea el render.
-function mis_fuentes_inline()
-{
-    $css = file_get_contents(get_template_directory() . '/assets/css/fonts.css');
-    if ($css) {
-        echo '<style id="mis-fonts">' . $css . '</style>' . "\n";
-    }
-}
-add_action('wp_head', 'mis_fuentes_inline', 1);
-
-// Precargar fuentes críticas e imagen hero
-function mis_fuentes_preload()
-{
-    $uri = get_template_directory_uri();
-
-    echo '<link rel="preload" href="' . $uri . '/images/jungle.webp" as="image" type="image/webp" fetchpriority="high">' . "\n";
-    echo '<link rel="preload" href="' . $uri . '/assets/fonts/Raleway-Medium.woff2" as="font" type="font/woff2" crossorigin>' . "\n";
-    echo '<link rel="preload" href="' . $uri . '/assets/fonts/Raleway-Bold.woff2" as="font" type="font/woff2" crossorigin>' . "\n";
-    echo '<link rel="preload" href="' . $uri . '/assets/fonts/SansitaSwashed-Bold.woff2" as="font" type="font/woff2" crossorigin fetchpriority="high">' . "\n";
-    echo '<link rel="preload" href="' . $uri . '/assets/fonts/SansitaSwashed-Medium.woff2" as="font" type="font/woff2" crossorigin>' . "\n";
-}
-add_action('wp_head', 'mis_fuentes_preload', -9999);
-
 
 /**
  * ============================================================
