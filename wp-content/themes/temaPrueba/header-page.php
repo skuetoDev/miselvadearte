@@ -7,6 +7,7 @@
          <!-- para importar estilos desde functions.php -->
          <?php wp_head(); ?>
       </head>
+      <body <?php body_class('is-preload'); ?>>
       <div id="page-wrapper">
          <!-- Header -->
          <section id="header">
@@ -14,15 +15,12 @@
             <a class="main-title" href="<?php echo home_url(); ?>"><?php echo bloginfo('name'); ?></a><br>
             <span class="second-title"><?php echo bloginfo('description'); ?></span>
                <!-- Nav -->
-               <section id="nav">
-                  <?php
-                     $arg = array(
-                        'theme_location' => 'principal',
-                        'container' => 'nav',
-                        'container_id' => 'nav'
-                     );
-                     wp_nav_menu($arg);
-                        ?>
-               </section>
-            </section>
-         </div>
+               <?php
+                  $arg = array(
+                     'theme_location' => 'principal',
+                     'container' => 'nav',
+                     'container_id' => 'nav'
+                  );
+                  wp_nav_menu($arg);
+                     ?>
+         </section>

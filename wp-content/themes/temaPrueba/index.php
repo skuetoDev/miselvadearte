@@ -1,10 +1,4 @@
-<!DOCTYPE HTML>
-<html <?php language_attributes(); ?>>
-   
-   <?php get_header('page'); ?> 
-   <body class="homepage is-preload">
-      <div id="page-wrapper">
-         <!-- Header -->
+<?php get_header('page'); ?>
          <!-- Main -->
          <section id="main" role="main">
             <div class="container">
@@ -67,7 +61,4 @@
             </div>
          </section>
          <?php get_footer(); ?>
-      </div>
-   </body>
-</html>
 

@@ -1,5 +1,4 @@
 <?php get_header('page'); ?>
-   <body class="no-sidebar is-preload">
       <!-- Main -->
       <section id="main" role="main">
          <div class="container">

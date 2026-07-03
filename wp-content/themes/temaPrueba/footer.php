@@ -92,8 +92,10 @@
       </div>
    </div>
 </section>
-</div>
+</div><!-- #page-wrapper -->
 <!-- para importar funciones desde functions.php -->
 <?php wp_footer(); ?>
+</body>
+</html>
 
 
