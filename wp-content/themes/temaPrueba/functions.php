@@ -191,11 +191,8 @@ add_filter('wp_default_scripts', 'quitar_jquery_migrate');
  * ============================================================
  */
 
-// Favicon canónico desde la raíz del dominio
-add_action('wp_head', function () {
-    echo '<link rel="icon" href="' . esc_url(home_url('/favicon.ico')) . '" type="image/x-icon">' . "\n";
-    echo '<link rel="shortcut icon" href="' . esc_url(home_url('/favicon.ico')) . '" type="image/x-icon">' . "\n";
-}, 0);
+// WordPress no inyecte sus propios iconos además de los tuyos
+
 remove_action('wp_head', 'wp_site_icon', 99);
 
 // Bloquear Google Tag (gtag.js) - no usado, guardado en BD de produccion

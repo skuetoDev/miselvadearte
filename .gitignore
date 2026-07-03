@@ -34,4 +34,4 @@ llms.txt
 
 # TEMAS: Ignorar todos excepto el personalizado
 wp-content/themes/*
-!wp-content/themes/temaPersonalizado/
+!wp-content/themes/temaPrueba/

@@ -2403,7 +2403,7 @@ ul.social li a.icon-twitch:hover::after {
    border-bottom: solid 1px #ccc;
    padding: 4em 0 1em 0;
    text-align: center;
-   background-image: url('images/jungle.webp');
+   background-image: url('images/jungleMovil.webp');
    background-position: center top;
    background-size: cover;
    background-repeat: no-repeat;
@@ -2413,7 +2413,7 @@ ul.social li a.icon-twitch:hover::after {
 @media (min-width: 1024px) {
    #header {
       background-image: url('images/jungle.webp');
-		height: 350px;
+      height: 350px;
    }
 }
 
@@ -2431,6 +2431,7 @@ ul.social li a.icon-twitch:hover::after {
 }
 #header .second-title {
 	color: #f2f7f3;
+	font-weight: 900;
 	font-size: 1.45em;
 }
 
