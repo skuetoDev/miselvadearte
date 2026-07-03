@@ -9,7 +9,7 @@
          <?php $img = get_template_directory_uri() . '/images'; ?>
 
          <!-- Preload del fondo del header (LCP): cada dispositivo descarga SOLO su versión -->
-         <link rel="preload" href="<?php echo $img; ?>/jungle-mobile.webp" as="image" type="image/webp" fetchpriority="high" media="(max-width: 1023px)">
+         <link rel="preload" href="<?php echo $img; ?>/jungleMovil.webp" as="image" type="image/webp" fetchpriority="high" media="(max-width: 1023px)">
          <link rel="preload" href="<?php echo $img; ?>/jungle.webp" as="image" type="image/webp" fetchpriority="high" media="(min-width: 1024px)">
 
          <!-- Preload de fuentes críticas (las URLs coinciden 1:1 con los @font-face de abajo) -->
