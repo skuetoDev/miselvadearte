@@ -13,14 +13,25 @@ Thumbs.db
 # Archivos temporales
 *.old
 .htaccess.old*
-#Archivos subidos a WordPress
-wp-content/uploads/
-#archivo de configuracion de wp-config.php
-wp-config.php
 
+# Archivos subidos a WordPress
+wp-content/uploads/
+
+# Archivo de configuración
+wp-config.php
 
 # Dependencias
 /vendor/
 node_modules/
-# Plugins
+
+# IMPORTANTE: Ignorar TODOS los plugins (se gestionan en el servidor)
 wp-content/plugins/
+
+# Ignorar idiomas y cachés autogenerados
+wp-content/languages/plugins/
+wp-content/litespeed/
+llms.txt
+
+# TEMAS: Ignorar todos excepto el personalizado
+wp-content/themes/*
+!wp-content/themes/temaPersonalizado/
